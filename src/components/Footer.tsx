@@ -17,7 +17,11 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex">
-              <a className="w-10 h-10 m-4" target="_blank" rel="noopener noreferrer" href="">
+              <a
+                className="w-10 h-10 m-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/seiichi1101">
                 <GitHub />
               </a>
               <a
