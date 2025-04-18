@@ -1,6 +1,6 @@
 import { sampleBlogsData } from '@/data/blog';
 
-export default function Home() {
+export default function Page() {
   const blogs = sampleBlogsData;
   return (
     <div>

@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/seiichi1101/profile">
-              view source code
+              View Source
             </a>
           </div>
         </div>

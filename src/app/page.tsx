@@ -1,7 +1,8 @@
 import { sampleBlogsData } from '@/data/blog';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Home() {
+export default function Page() {
   const blogs = sampleBlogsData;
   return (
     <div className="min-h-screen bg-gray-50">
@@ -10,6 +11,16 @@ export default function Home() {
         <section>
           <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">About Me</h2>
           <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="mb-8">
+              <Image
+                src="/desk1.jpg"
+                alt="My workspace setup 1"
+                width={1200}
+                height={400}
+                className="rounded-lg shadow-md object-cover w-full"
+                priority
+              />
+            </div>
             <h3 className="text-2xl font-semibold text-gray-700 mb-6 text-center">Seiichi Arai</h3>
             <p className="text-gray-600 leading-relaxed">
               Hello - I&apos;m Seiichi, a software developer with a master&apos;s degree in
@@ -76,12 +87,17 @@ export default function Home() {
               <div className="ml-4">
                 <h4 className="font-medium text-gray-700 mb-2">Founder</h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-600">
-                  <li>Org-chart SaaS: Hono, Next.js, React Flow, TypeScript, Cloudflare Workers</li>
                   <li>
-                    Partner-relationship management app: Django, Python, Terraform, Google Cloud
+                    Org-chart SaaS: Hono, Next.js, Prisma, React Flow, TypeScript, Cloudflare
+                    Workers, Cloudflare D1
                   </li>
                   <li>
-                    Edge surveillance system: Raspberry Pi, Camera, Python, Cloudflare Workers
+                    Partner-relationship management app: Django, Python, Terraform, Google Cloud
+                    Run, Google Cloud SQL(PostgreSQL)
+                  </li>
+                  <li>
+                    Edge surveillance system: Raspberry Pi, Camera, Python, Cloudflare Workers,
+                    Soracom
                   </li>
                 </ul>
               </div>
@@ -98,7 +114,7 @@ export default function Home() {
                   <h4 className="font-medium text-gray-700 mb-2">Service Operations Engineering</h4>
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
                     <li>Authentication-platform replacement: OAuth 2.0, Auth0</li>
-                    <li>Back-end migration: Kotlin, Spring Boot, OAuth 2.0</li>
+                    <li>Back-end migration: Kotlin, Spring Boot, OAuth 2.0,JPA, Aurora MySQL</li>
                     <li>E-mail batch-job system: Rust, AWS CDK, AWS Lambda</li>
                   </ul>
                 </div>
@@ -107,12 +123,12 @@ export default function Home() {
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
                     <li>
                       Heavy-machinery data-collection system: Cloud-native Architecture, ETL,
-                      Python, FastAPI, Serverless Framework
+                      Python, FastAPI, AWS Lambda, Aurora Postgres, Serverless Framework
                     </li>
                     <li>
                       Web-app AWS re-platform (infra + SRE): Cloud-native Architecture,
-                      Containerization, Terraform, AWS ALB, AWS ECS, AWS RDS, Amazon ElastiCache,
-                      New Relic
+                      Containerization, Terraform, AWS ALB, AWS ECS, Amazon Aurora Serverless,
+                      Amazon ElastiCache, New Relic
                     </li>
                     <li>
                       Factory monitoring & visualization: PLC, NestJS, React, WebSocket, Node.js,
@@ -193,7 +209,7 @@ export default function Home() {
                   </div>
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
                     <li>
-                      Advertising-management tool maintenance: C++, Database Migration,
+                      Advertising-management tool Development: C++, Database Migration,
                       Troubleshooting, Sakura VPN
                     </li>
                   </ul>
