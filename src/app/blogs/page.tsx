@@ -1,14 +1,19 @@
-import { sampleBlogsData } from '@/data/blog';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
+import { drizzle } from 'drizzle-orm/d1';
+import { Blog } from '@/db/schema';
 
-export default function Page() {
-  const blogs = sampleBlogsData;
+export default async function Page() {
+  const db = drizzle((await getCloudflareContext({ async: true })).env.DB);
+  const blogs = await db.select().from(Blog).all();
+
   return (
     <div>
-      {/*TODO: integrate external blogs*/}
       {blogs.map((blog) => (
         <div
           className="flex flex-col items-center justify-center mt-6 cursor-pointer"
-          key={blog.id}></div>
+          key={blog.id}>
+          <p>{blog.title}</p>
+        </div>
       ))}
     </div>
   );

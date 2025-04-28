@@ -1,9 +1,34 @@
-import { sampleBlogsData } from '@/data/blog';
-import Link from 'next/link';
 import Image from 'next/image';
+import { drizzle } from 'drizzle-orm/d1';
+import { Blog } from '../../db/schema';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
+import LoadMoreBlogs from '@/src/components/LoadMoreBlogs';
+import { client } from './lib/client';
 
-export default function Page() {
-  const blogs = sampleBlogsData;
+const getBlogs = async () => {
+  const now = new Date();
+  if (now.getSeconds() % 2 === 0) {
+    console.log('Fetching blogs directly from the database (SSG)');
+    const db = drizzle((await getCloudflareContext({ async: true })).env.DB);
+    const blogs = await db.select().from(Blog).limit(5);
+    return blogs;
+  } else {
+    console.log('Fetching blogs from the RPC (SSR)');
+    const blogs = await client.api.blogs
+      .$get({
+        query: {
+          page: '1',
+          size: '5',
+        },
+      })
+      .then((res) => res.json());
+    return blogs;
+  }
+};
+
+export default async function Page() {
+  const blogs = await getBlogs();
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-12 max-w-5xl space-y-16">
@@ -23,18 +48,19 @@ export default function Page() {
             </div>
             <h3 className="text-2xl font-semibold text-gray-700 mb-6 text-center">Seiichi Arai</h3>
             <p className="text-gray-600 leading-relaxed">
-              Hello - I&apos;m Seiichi, a software developer with a master&apos;s degree in
-              Electrical Engineering. After graduating, I spent a year on a working-holiday visa in
-              Australia and travelled extensively before launching my engineering career in 2016.
-              Since then I&apos;ve contributed to a wide range of projects at several companies. In
-              2022 I relocated to Germany to join Classmethod Germany, and in July 2024 I co-founded
-              my own company in Japan with my brother. With more than seven years of hands-on
-              experience, I specialise in full-stack development and DevOps consulting, tailoring
-              solutions to each client&apos;s needs.
+              Hello – I&apos;m Seiichi, a software developer with a master&apos;s degree in
+              Information and Electrical Engineering. After graduating, I spent a year in Australia
+              on a working holiday visa, traveling extensively before launching my engineering
+              career in 2016. Since then, I&apos;ve contributed to a wide range of projects at
+              several companies. In 2022, I relocated to Germany to join Classmethod Germany under
+              the EU Blue Card. In 2024, I also obtained a permanent residence permit
+              (Niederlassungserlaubnis) in Germany. Additionally, in July 2024, I co-founded a
+              company in Japan with my brother. With more than 10 years of hands-on experience, I
+              specialize in full-stack development and DevOps, providing tailored solutions to meet
+              each client&apos;s unique needs.
             </p>
           </div>
         </section>
-
         {/* Skills */}
         <section>
           <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Skills</h2>
@@ -222,25 +248,7 @@ export default function Page() {
         {/* Blogs */}
         <section>
           <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Recent Blogs</h2>
-          <div className="space-y-4">
-            {blogs.map((blog) => (
-              <Link href={`/blog/${blog.id}`} key={blog.id}>
-                <div className="bg-white rounded-lg shadow-md p-4 transition duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-medium text-gray-700">{blog.title}</h3>
-                    <span className="text-sm text-gray-500">
-                      {blog.id.slice(0, 4)}/{blog.id.slice(4, 6)}/{blog.id.slice(6)}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-            <div className="text-center mt-8">
-              <button className="text-gray-600 hover:text-gray-800 hover:underline">
-                View More
-              </button>
-            </div>
-          </div>
+          <LoadMoreBlogs initialBlogs={blogs} />
         </section>
 
         {/* Honors & Awards */}

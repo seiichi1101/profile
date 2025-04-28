@@ -1,13 +1,11 @@
-import { sampleBlogsData } from '@/data/blog';
-
 export default function Page() {
-  const blogs = sampleBlogsData;
+  const projects = [{ id: 1 }];
   return (
     <div>
-      {blogs.map((blog) => (
+      {projects.map((project) => (
         <div
           className="flex flex-col items-center justify-center mt-6 cursor-pointer"
-          key={blog.id}></div>
+          key={project.id}></div>
       ))}
     </div>
   );

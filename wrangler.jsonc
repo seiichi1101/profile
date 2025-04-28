@@ -5,7 +5,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "profile",
-  "main": ".open-next/worker.js",
+  // "main": ".open-next/worker.js",
+  "main": "worker.ts",
   "compatibility_date": "2025-03-01",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
@@ -14,7 +15,30 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "profile",
+      "database_id": "39404cb2-7482-424e-b641-38be3a650f71",
+      "migrations_dir": "drizzle"
+    }
+  ]
+  // TODO: Set up Durable Objects for websocket connections
+  // "durable_objects": {
+  //   "bindings": [
+  //     {
+  //       "name": "Y_DURABLE_OBJECTS",
+  //       "class_name": "YDurableObjects"
+  //     }
+  //   ]
+  // },
+  // "migrations": [
+  //   {
+  //     "tag": "v1",
+  //     "new_classes": ["YDurableObjects"]
+  //   }
+  // ]
   /**
    * Smart Placement
    * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
