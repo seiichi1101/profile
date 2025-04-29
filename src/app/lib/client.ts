@@ -1,10 +1,15 @@
 import { hc } from 'hono/client';
 import type { AppType } from '@/src/app/api/[...route]/route';
 
-export const client = hc<AppType>('http://localhost:3000', {
-  fetch: (input: RequestInfo | URL, requestInit?: RequestInit) =>
-    fetch(input, {
-      cache: 'no-cache',
-      ...requestInit,
+export type RpcClient = ReturnType<typeof hc<AppType>>;
+
+export const rpc = (url: string) => ({
+  build: (): RpcClient =>
+    hc<AppType>(url, {
+      fetch: async (input: RequestInfo | URL, requestInit?: RequestInit) =>
+        fetch(input, {
+          cache: 'no-cache',
+          ...requestInit,
+        }),
     }),
 });

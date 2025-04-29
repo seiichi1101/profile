@@ -38,7 +38,7 @@ resetdb-remote:
 	make -s _resetdb DB_NAME=profile OPTIONS=--remote
 
 _loaddata:
-	npx wrangler d1 execute $(DB_NAME) --file ./scripts/seed.sql $(OPTIONS)
+	npx wrangler d1 execute $(DB_NAME) --file ./db/seed.sql $(OPTIONS)
 
 loaddata:
 	make -s _loaddata DB_NAME=profile OPTIONS=--local
@@ -47,7 +47,7 @@ loaddata-remote:
 	make -s _loaddata DB_NAME=profile OPTIONS=--remote
 
 _cleardata:
-	npx wrangler d1 execute $(DB_NAME) --file ./scripts/cleardata.sql $(OPTIONS)
+	npx wrangler d1 execute $(DB_NAME) --file ./db/cleardata.sql $(OPTIONS)
 
 cleardata:
 	make -s _cleardata DB_NAME=profile OPTIONS=--local

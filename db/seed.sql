@@ -1,1 +1,21 @@
--- TODO:
+INSERT INTO Blog (title, content, published) VALUES
+('First Post', 'This is the content of the first post.', 0),
+('Second Post', 'This is the content of the second post.', 0),
+('Third Post', 'This is the content of the third post.', 0),
+('Fourth Post', 'This is the content of the fourth post.', 0),
+('Fifth Post', 'This is the content of the fifth post.', 0),
+('Sixth Post', 'This is the content of the sixth post.', 0),
+('Seventh Post', 'This is the content of the seventh post.', 0),
+('Eighth Post', 'This is the content of the eighth post.', 0),
+('Ninth Post', 'This is the content of the ninth post.', 0),
+('Tenth Post', 'This is the content of the tenth post.', 0),
+('Eleventh Post', 'This is the content of the eleventh post.', 0),
+('Twelfth Post', 'This is the content of the twelfth post.', 0),
+('Thirteenth Post', 'This is the content of the thirteenth post.', 0),
+('Fourteenth Post', 'This is the content of the fourteenth post.', 0),
+('Fifteenth Post', 'This is the content of the fifteenth post.', 0),
+('Sixteenth Post', 'This is the content of the sixteenth post.', 0),
+('Seventeenth Post', 'This is the content of the seventeenth post.', 0),
+('Eighteenth Post', 'This is the content of the eighteenth post.', 0),
+('Nineteenth Post', 'This is the content of the nineteenth post.', 0),
+('Twentieth Post', 'This is the content of the twentieth post.', 0);

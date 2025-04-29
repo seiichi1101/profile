@@ -1,11 +1,11 @@
 'use client';
 
-import { client } from '@/src/app/lib/client';
 import Link from 'next/link';
 import { useState } from 'react';
 import { BlogResponseType } from '../app/api/blogs';
+import { rpc, RpcClient } from '../app/lib/client';
 
-const getBlogs = async (page: number) => {
+const getBlogs = async (client: RpcClient, page: number) => {
   const now = new Date();
   if (now.getSeconds() % 2 === 0) {
     console.log('Fetching blogs from the RPC (CSR)');
@@ -23,12 +23,19 @@ const getBlogs = async (page: number) => {
   }
 };
 
-export default function LoadMoreBlogs({ initialBlogs }: { initialBlogs: BlogResponseType[] }) {
+export default function LoadMoreBlogs({
+  url,
+  initialBlogs,
+}: {
+  url: string;
+  initialBlogs: BlogResponseType[];
+}) {
+  const client = rpc(url).build();
   const [blogs, setBlogs] = useState(initialBlogs);
   const [page, setPage] = useState(1);
 
   const loadMore = async () => {
-    const res = await getBlogs(page + 1);
+    const res = await getBlogs(client, page + 1);
     if (!res.ok) {
       console.error('Failed to load more blogs');
       return;

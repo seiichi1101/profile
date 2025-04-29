@@ -3,31 +3,40 @@ import { drizzle } from 'drizzle-orm/d1';
 import { Blog } from '../../db/schema';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import LoadMoreBlogs from '@/src/components/LoadMoreBlogs';
-import { client } from './lib/client';
+import { RpcClient, rpc } from './lib/client';
 
-const getBlogs = async () => {
-  const now = new Date();
-  if (now.getSeconds() % 2 === 0) {
-    console.log('Fetching blogs directly from the database (SSG)');
-    const db = drizzle((await getCloudflareContext({ async: true })).env.DB);
-    const blogs = await db.select().from(Blog).limit(5);
-    return blogs;
-  } else {
-    console.log('Fetching blogs from the RPC (SSR)');
-    const blogs = await client.api.blogs
-      .$get({
-        query: {
-          page: '1',
-          size: '5',
-        },
-      })
-      .then((res) => res.json());
-    return blogs;
-  }
+// avoid SSG due to the fact that the database access is not available in Cloudflare Worker's build phase
+export const dynamic = 'force-dynamic';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const getBlogs = async (client: RpcClient) => {
+  // const now = new Date();
+  // if (now.getSeconds() % 2 === 0) {
+  console.log('Fetching blogs directly from the database');
+  const db = drizzle((await getCloudflareContext({ async: true })).env.DB);
+  const blogs = await db.select().from(Blog).limit(5);
+  return blogs;
+  // } else {
+  // FIXME: this sometime fails as 522 on Cloudflare Workers due to self-fetching
+  // console.log('Fetching blogs from the RPC');
+  // const blogs = await client.api.blogs
+  //   .$get({
+  //     query: {
+  //       page: '1',
+  //       size: '5',
+  //     },
+  //   })
+  //   .then((res) => res.json());
+  // return blogs;
+  // }
 };
 
 export default async function Page() {
-  const blogs = await getBlogs();
+  const env = (await getCloudflareContext({ async: true })).env.NEXTJS_ENV;
+  const urlForServer = env ? 'http://localhost:3000' : 'http://127.0.0.1:8787';
+  const urlForClient = env ? 'http://localhost:3000' : 'https://profile.seiichi.me';
+  const client = await rpc(urlForServer).build();
+  const blogs = await getBlogs(client);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -248,7 +257,7 @@ export default async function Page() {
         {/* Blogs */}
         <section>
           <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Recent Blogs</h2>
-          <LoadMoreBlogs initialBlogs={blogs} />
+          <LoadMoreBlogs url={urlForClient} initialBlogs={blogs} />
         </section>
 
         {/* Honors & Awards */}

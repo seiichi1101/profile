@@ -23,7 +23,7 @@
       "database_id": "39404cb2-7482-424e-b641-38be3a650f71",
       "migrations_dir": "drizzle"
     }
-  ]
+  ],
   // TODO: Set up Durable Objects for websocket connections
   // "durable_objects": {
   //   "bindings": [
@@ -56,7 +56,7 @@
    * Environment Variables
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
-  // "vars": { "MY_VARIABLE": "production_value" },
+  "vars": { "ENV": "local" }
   /**
    * Note: Use secrets to store sensitive data.
    * https://developers.cloudflare.com/workers/configuration/secrets/
