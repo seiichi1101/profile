@@ -94,7 +94,7 @@ export const blogRoutes = blog
       .offset((page - 1) * size);
     return c.json(blogs);
   })
-  .openapi(createBlog, async (c) => {
+  .openapi(createBlog, (c) => {
     // skip insertion for now
     // const { title, content, published } = c.req.valid('json');
     // const db = drizzle((await getCloudflareContext({ async: true })).env.DB);
@@ -106,6 +106,7 @@ export const blogRoutes = blog
         title: 'test',
         content: 'test',
         published: 1,
+        externalLink: '',
       },
       201
     );

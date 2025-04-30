@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { BlogResponseType } from '../app/api/blogs';
+import Image from 'next/image';
 import { rpc, RpcClient } from '../app/lib/client';
 
 const getBlogs = async (client: RpcClient, page: number) => {
@@ -47,15 +48,37 @@ export default function LoadMoreBlogs({
 
   return (
     <div className="space-y-4">
-      {blogs.map((blog) => (
-        <Link href={`/blog/${blog.id}`} key={blog.id}>
-          <div className="bg-white rounded-lg shadow-md p-4 m-2 transition duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="flex justify-between items-center">
-              <h3 className="text-lg font-medium text-gray-700">{blog.title}</h3>
+      {blogs.map((blog) =>
+        blog.externalLink ? (
+          <a
+            key={blog.id}
+            href={blog.externalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block">
+            <div className="bg-white rounded-lg shadow-md p-4 m-2 transition duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-medium text-gray-700">{blog.title}</h3>
+                <Image
+                  src="/globe.svg"
+                  alt="External link"
+                  width={16}
+                  height={16}
+                  className="ml-2"
+                />
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </a>
+        ) : (
+          <Link href={`/blog/${blog.id}`} key={blog.id}>
+            <div className="bg-white rounded-lg shadow-md p-4 m-2 transition duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-medium text-gray-700">{blog.title}</h3>
+              </div>
+            </div>
+          </Link>
+        )
+      )}
       <div className="text-center mt-8">
         <button
           onClick={loadMore}

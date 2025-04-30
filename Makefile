@@ -47,7 +47,7 @@ loaddata-remote:
 	make -s _loaddata DB_NAME=profile OPTIONS=--remote
 
 _cleardata:
-	npx wrangler d1 execute $(DB_NAME) --file ./db/cleardata.sql $(OPTIONS)
+	npx wrangler d1 execute $(DB_NAME) --file ./db/clear.sql $(OPTIONS)
 
 cleardata:
 	make -s _cleardata DB_NAME=profile OPTIONS=--local

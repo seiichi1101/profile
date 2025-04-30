@@ -5,6 +5,43 @@ import { getCloudflareContext } from '@opennextjs/cloudflare';
 import LoadMoreBlogs from '@/src/components/LoadMoreBlogs';
 import { RpcClient, rpc } from './lib/client';
 
+interface Showcase {
+  title: string;
+  embedUrl: string;
+}
+
+const showcases: Showcase[] = [
+  {
+    title:
+      'Djangoで組織とユーザーの権限管理をやってみよう / How to Manage Organization and User Permissions with Django',
+    embedUrl: 'https://speakerdeck.com/player/37d6bb70f7124f3abd5541ec08ffe3bc',
+  },
+  {
+    title:
+      'AWS Glueを使った Serverless ETL の実装パターン / How to Implement Serverless ETL with AWS Glue',
+    embedUrl: 'https://speakerdeck.com/player/ac0741ba6ae041239ef867c1359c88e1',
+  },
+  {
+    title: 'イマドキ!ユースケース別に見る AWS IoT への接続パターン / AWS IoT Connection Patterns',
+    embedUrl: 'https://speakerdeck.com/player/11272fb28f4145ba9502a93251d58ed3',
+  },
+  {
+    title:
+      'Djangoで組織とユーザーの権限管理をやってみよう / How to Manage Organization and User Permissions with Django',
+    embedUrl: 'https://www.youtube.com/embed/7zQdngoCysw?si=vGcpaAjiZtjMwoMV" title=',
+  },
+  {
+    title:
+      'AWS Glueを使ったサーバーレスETLの実装方法を徹底解説 / How to Implement Serverless ETL with AWS Glue',
+    embedUrl: 'https://www.youtube.com/embed/Hj8bhs0evns?si=_J1ubcS9EdMss5JB',
+  },
+  {
+    title: 'ソフトウェアデザイン 2019年12月号 / Software Design December 2019',
+    embedUrl:
+      'https://www.amazon.co.jp/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-2019%E5%B9%B412%E6%9C%88%E5%8F%B7-%E5%90%89%E7%94%B0-%E7%9C%9F%E5%90%BE/dp/B07Z74Q3BD',
+  },
+];
+
 // avoid SSG due to the fact that the database access is not available in Cloudflare Worker's build phase
 export const dynamic = 'force-dynamic';
 
@@ -251,6 +288,25 @@ export default async function Page() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Showcase */}
+        <section>
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Showcase</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {showcases.map((showcase) => (
+              <div key={showcase.embedUrl} className="bg-white rounded-lg shadow-md p-6">
+                <h3 className="text-xl font-semibold text-gray-700 mb-4">{showcase.title}</h3>
+                <div className="relative h-0" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                    src={showcase.embedUrl}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

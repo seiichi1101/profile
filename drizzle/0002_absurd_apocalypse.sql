@@ -1,0 +1,1 @@
+ALTER TABLE `Blog` ADD `externalLink` text;

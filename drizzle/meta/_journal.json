@@ -15,6 +15,13 @@
       "when": 1745879556579,
       "tag": "0001_medical_leo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1746024934887,
+      "tag": "0002_absurd_apocalypse",
+      "breakpoints": true
     }
   ]
 }

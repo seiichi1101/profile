@@ -1,1 +1,1 @@
--- TODO:
+DELETE FROM Blog;
