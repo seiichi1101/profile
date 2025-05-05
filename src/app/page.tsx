@@ -102,7 +102,7 @@ export default async function Page() {
               the EU Blue Card. In 2024, I also obtained a permanent residence permit
               (Niederlassungserlaubnis) in Germany. Additionally, in July 2024, I co-founded a
               company in Japan with my brother. With more than 10 years of hands-on experience, I
-              specialize in full-stack development and DevOps, providing tailored solutions to meet
+              specialize in Software Development and DevOps, providing tailored solutions to meet
               each client&apos;s unique needs.
             </p>
           </div>
@@ -151,6 +151,7 @@ export default async function Page() {
         <section>
           <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Careers</h2>
           <div className="space-y-6">
+            {/* Erstech LLC */}
             <div className="bg-white rounded-lg shadow-md p-6">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-semibold text-gray-700">Erstech LLC</h3>
@@ -159,18 +160,51 @@ export default async function Page() {
               <div className="ml-4">
                 <h4 className="font-medium text-gray-700 mb-2">Founder</h4>
                 <ul className="list-disc list-inside space-y-2 text-gray-600">
-                  <li>
-                    Org-chart SaaS: Hono, Next.js, Prisma, React Flow, TypeScript, Cloudflare
-                    Workers, Cloudflare D1
-                  </li>
-                  <li>
-                    Partner-relationship management app: Django, Python, Terraform, Google Cloud
-                    Run, Google Cloud SQL(PostgreSQL)
-                  </li>
-                  <li>
-                    Edge surveillance system: Raspberry Pi, Camera, Python, Cloudflare Workers,
-                    Soracom
-                  </li>
+                  <div className="space-y-6">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">Org-chart SaaS</h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        Hono, Next.js, Prisma, React Flow, TypeScript, Cloudflare Workers,
+                        Cloudflare D1
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        A SaaS platform for easy creation and management of organizational charts.
+                        Implemented real-time collaboration features enabling multiple users to edit
+                        simultaneously. The organization charts can be hosted on the site and used
+                        for recruitment web pages.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Partner-relationship Management App
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        Django, Python, Terraform, Google Cloud Run, Google Cloud SQL(PostgreSQL)
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        An application to streamline partner relationship management. Implemented
+                        features for project progress tracking, easy communication with partners,
+                        document sharing, and analysis of partner performance in dashboards.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Edge Surveillance System
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        Raspberry Pi, Camera, Python, Cloudflare Workers, Soracom
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">-</p>
+                    </div>
+                  </div>
                 </ul>
               </div>
             </div>
@@ -183,29 +217,103 @@ export default async function Page() {
               </div>
               <div className="space-y-4 ml-4">
                 <div>
-                  <h4 className="font-medium text-gray-700 mb-2">Service Operations Engineering</h4>
-                  <ul className="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Authentication-platform replacement: OAuth 2.0, Auth0</li>
-                    <li>Back-end migration: Kotlin, Spring Boot, OAuth 2.0,JPA, Aurora MySQL</li>
-                    <li>E-mail batch-job system: Rust, AWS CDK, AWS Lambda</li>
-                  </ul>
+                  <h4 className="font-medium text-gray-700 mb-2">Product Development Team</h4>
+                  <div className="space-y-6">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Identity and Access Management Renewal
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">OAuth2.0, RBAC, ABAC</p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Identity and access management system renewal project. Replaced legacy
+                        Spring Security Authentication and access control with OAuth2.0 and
+                        RBAC/ABAC.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        API Backend Replacement
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">Kotlin, Spring Boot, JPA, Aurora MySQL</p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Backend system modernization project. Adopted Kotlin and Spring Boot to
+                        improve performance and maintainability of the system.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        E-mail Batch-job System
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">Rust, AWS CDK, AWS Lambda, AWS SES</p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Development of a large-scale email delivery system. Achieved
+                        high-performance and reliable processing using Rust, with infrastructure as
+                        code implementation using AWS CDK.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-700 mb-2">Development & Consulting</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Development & Consulting Team</h4>
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
-                    <li>
-                      Heavy-machinery data-collection system: Cloud-native Architecture, ETL,
-                      Python, FastAPI, AWS Lambda, Aurora Postgres, Serverless Framework
-                    </li>
-                    <li>
-                      Web-app AWS re-platform (infra + SRE): Cloud-native Architecture,
-                      Containerization, Terraform, AWS ALB, AWS ECS, Amazon Aurora Serverless,
-                      Amazon ElastiCache, New Relic
-                    </li>
-                    <li>
-                      Factory monitoring & visualization: PLC, NestJS, React, WebSocket, Node.js,
-                      C/C++, S7 Protocol
-                    </li>
+                    <div className="space-y-6">
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h5 className="text-lg font-medium text-gray-800 mb-2">
+                          Web-app AWS Re-platform
+                        </h5>
+                        <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                        <p className="text-gray-600 mb-2">
+                          Cloud-native Architecture, Containerization, Terraform, AWS ALB, AWS ECS,
+                          Amazon Aurora Serverless, Amazon ElastiCache, NewRelic
+                        </p>
+                        <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                        <p className="text-gray-600">
+                          Migration of the systems to cloud-native architecture. Enhanced
+                          portability through containerization, implemented auto-scaling, and
+                          established comprehensive monitoring systems.
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h5 className="text-lg font-medium text-gray-800 mb-2">
+                          Heavy-machinery Data Collection System
+                        </h5>
+                        <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                        <p className="text-gray-600 mb-2">
+                          Cloud-native Architecture, ETL, REST API, Python, FastAPI, AWS Lambda,
+                          Aurora Postgres, Serverless Framework
+                        </p>
+                        <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                        <p className="text-gray-600">
+                          A system for collecting and analyzing data from heavy machinery.
+                          Implemented data collection, ETL processes, and API development.
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h5 className="text-lg font-medium text-gray-800 mb-2">
+                          Factory Monitoring & Visualization
+                        </h5>
+                        <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                        <p className="text-gray-600 mb-2">
+                          PLC, NestJS, React, WebSocket, Node.js, C/C++, S7 Protocol
+                        </p>
+                        <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                        <p className="text-gray-600">
+                          Real-time monitoring and visualization system for factory production
+                          lines. Implemented PLC data collection, WebSocket-based real-time updates,
+                          and interactive dashboards.
+                        </p>
+                      </div>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -215,40 +323,101 @@ export default async function Page() {
               <h3 className="text-xl font-semibold text-gray-700 mb-6">Classmethod Inc.</h3>
               <div className="space-y-6 ml-4">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-medium text-gray-700">Contract Development Division</h4>
+                  <h4 className="font-medium text-gray-700">Contract Development Team</h4>
                   <span className="text-sm text-gray-500">Apr 2018 - Jun 2022</span>
                 </div>
                 <ul className="list-disc list-inside space-y-2 text-gray-600">
-                  <li>
-                    Cloud-native web application: REST API, Python, AWS SAM, API Gateway, AWS
-                    Lambda, DynamoDB
-                  </li>
-                  <li>
-                    Agricultural IoT system: MQTT, REST API, Python, AWS SAM, AWS IoT, AWS Lambda,
-                    DynamoDB, Soracom
-                  </li>
-                  <li>
-                    Connected-vehicle IoT platform: MQTT, REST API, Python, AWS SAM, AWS IoT, AWS
-                    Lambda, DynamoDB
-                  </li>
-                  <li>
-                    Factory monitoring data pipeline: PLC, MQTT, Soracom, ETL, Python, AWS IoT, AWS
-                    Lambda, DynamoDB
-                  </li>
-                  <li>
-                    Microservice system: Clean Architecture, Microservices, gRPC, OAuth 2.0, Go,
-                    Amazon ALB, AWS ECS, Amazon Neptune, Auth0
-                  </li>
-                  <li>
-                    Web-app AWS re-platform (infra): Terraform, AWS ALB, AWS ECS, AWS RDS, Amazon
-                    ElastiCache
-                  </li>
-                  <li>
-                    Web-app AWS re-platform (infra + SRE): Cloud-native Architecture,
-                    Containerization, SRE (SLO/SLI), Terraform, AWS ALB, AWS ECS, AWS RDS, Amazon
-                    ElastiCache, New Relic
-                  </li>
-                  <li>Front-end enablement: React, GraphQL, AWS Amplify, AWS CDK</li>
+                  <div className="space-y-6">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Microservice System
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        Clean Architecture, Microservices, gRPC, OAuth 2.0, Go, Amazon ALB, AWS ECS,
+                        Amazon Neptune, Auth0
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        System based on microservices architecture. Designed and implemented
+                        inter-service communication, authentication/authorization, and data
+                        persistence layer.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Web-app AWS Re-platform (Infrastructure)
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        Terraform, AWS ALB, AWS ECS, AWS RDS, Amazon ElastiCache
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Migration of web application infrastructure to AWS. Implemented
+                        Infrastructure as Code, ensured high availability, and performed performance
+                        tuning.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Front-end Application Development (PoC)
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">React, GraphQL, AWS Amplify, AWS CDK</p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Development of modern front-end development environment. Implemented the AWS
+                        resource monitoring dashboard using React and GraphQL.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Agricultural IoT System
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        MQTT, REST API, Python, AWS SAM, AWS IoT, AWS Lambda, DynamoDB, Soracom
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        IoT system for agriculture. Implemented sensor data collection and API.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Connected-vehicle IoT Platform
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        MQTT, REST API, Python, AWS SAM, AWS IoT, AWS Lambda, DynamoDB
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        IoT platform for collecting and analyzing vehicle data. Implemented
+                        real-time tracking, driving data analysis.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Factory Monitoring Data Pipeline
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        PLC, MQTT, Soracom, ETL, Python, AWS IoT, AWS Lambda, DynamoDB
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Data pipeline for collecting and processing factory sensor data. Implemented
+                        real-time data processing, data transformation, and persistence features.
+                      </p>
+                    </div>
+                  </div>
                 </ul>
               </div>
             </div>
@@ -259,15 +428,33 @@ export default async function Page() {
               </h3>
               <div className="space-y-6 ml-4">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-medium text-gray-700">
-                    Site Reliability Engineering Division
-                  </h4>
+                  <h4 className="font-medium text-gray-700">Site Reliability Engineering Team</h4>
                   <span className="text-sm text-gray-500">Dec 2016 - Mar 2018</span>
                 </div>
-                <ul className="list-disc list-inside space-y-2 text-gray-600">
-                  <li>Product DevOps: System Monitoring, CI/CD</li>
-                  <li>AWS research & POC: Amazon Aurora MySQL, Serverless Framework, Node.js</li>
-                </ul>
+                <div className="space-y-6">
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h5 className="text-lg font-medium text-gray-800 mb-2">AWS Research & POC</h5>
+                    <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                    <p className="text-gray-600 mb-2">
+                      Amazon Aurora MySQL, Serverless Framework, Node.js
+                    </p>
+                    <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                    <p className="text-gray-600">
+                      Validation of new AWS technologies and prototype development. Conducted
+                      serverless architecture evaluation, performance testing, and cost analysis.
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h5 className="text-lg font-medium text-gray-800 mb-2">DevOps</h5>
+                    <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                    <p className="text-gray-600 mb-2">System Monitoring, CI/CD</p>
+                    <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                    <p className="text-gray-600">
+                      Established system monitoring infrastructure and CI/CD pipelines. Implemented
+                      alert configurations and automated deployment flows.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -276,14 +463,24 @@ export default async function Page() {
               <div className="space-y-6 ml-4">
                 <div>
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-medium text-gray-700">Development Division</h4>
+                    <h4 className="font-medium text-gray-700">Development Team</h4>
                     <span className="text-sm text-gray-500">Apr 2016 - Sep 2016</span>
                   </div>
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
-                    <li>
-                      Advertising-management tool Development: C++, Database Migration,
-                      Troubleshooting, Sakura VPN
-                    </li>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Advertising-management Tool Development
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        C++, Database Migration, Troubleshooting, Sakura VPN
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Development and maintenance of advertising management tool. Responsible for
+                        database migration, performance optimization, and troubleshooting.
+                      </p>
+                    </div>
                   </ul>
                 </div>
               </div>
