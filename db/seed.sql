@@ -1,4 +1,12 @@
 INSERT INTO Blog (title, content, published, externalLink) VALUES
+('JavaのStream APIを理解するために自作Streamを実装してみた', '', 1, 'https://zenn.dev/seiichi1101/articles/java-my-stream'),
+('Permit.ioでReBAC(Relationship-Based Access Control)をやってみた', '', 1, 'https://zenn.dev/seiichi1101/articles/permitio-rebac'),
+('Permit.ioでABAC(Attribute-Based Access Control)をやってみた', '', 1, 'https://zenn.dev/seiichi1101/articles/permitio-abac'),
+('アクセスコントロールSaaS Permit.io でWeb APIのアクセス制御を実装してみた', '', 1, 'https://zenn.dev/seiichi1101/articles/permitio-tutorial'),
+('Recap of AWS Community Day DACH 2025: Rethinking CloudWatch: Advanced AWS-native Observability That Can Save You $100k+ On 3rd Party Tools', '', 1, 'https://dev.classmethod.jp/articles/recap-of-aws-community-day-dach-2025-rethinking-cloudwatch-advanced-aws/'),
+('Recap of AWS Community Day DACH 2025: Implementing Compliance in AWS with Terraform', '', 1, 'https://dev.classmethod.jp/articles/recap-of-aws-community-day-dach-2025-implementing-compliance-in-aws-with/'),
+('ヨーロッパ最大級のAWSコミュニティイベント AWS Community Day DACH 2025 に参加してきた', '', 1, 'https://dev.classmethod.jp/articles/aws-community-day-dach-2025-report/'),
+('Web APIのアクセスコントローラーとしてのAmazon Verified Permissionsの可能性を探る', '', 1, 'https://dev.classmethod.jp/articles/web-api-amazon-verified-permissions/'),
 ('AWS Copilot CLIでECSにgRPCサーバーをデプロイできるようになったよ', '', 1, 'https://zenn.dev/seiichi1101/articles/copilot-grpc-go'),
 ('Google OAuth2.0を使ってGoogle Tasks APIを呼び出すReact SPAを作ってみた', '', 1, 'https://zenn.dev/seiichi1101/articles/google-oauth2-react-spa'),
 ('OpenSearchの構成パターンについて考えてみた', '', 1 ,'https://dev.classmethod.jp/articles/opensearch-design-pattern/'),
@@ -69,3 +77,4 @@ INSERT INTO Blog (title, content, published, externalLink) VALUES
 ('Cognitoから払い出された IdToken を API Gateway カスタムオーソライザーのLambdaで検証する方法', '', 1, 'https://dev.classmethod.jp/articles/verify_cognit_idtoken_by_apig_custom_auth/'),
 ('DynamoDBでElasticsearch Service/CloudSearch/SDK Scan に頼らず検索機能を実現する方法', '', 1, 'https://dev.classmethod.jp/articles/dynamodb-inverted-index/'),
 ('クラスメソッドのサーバーレス開発部にジョインしました新井です', '', 1, 'https://dev.classmethod.jp/articles/araiseiichi-join/');
+ 

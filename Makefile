@@ -2,13 +2,13 @@ stage ?= local
 
 
 dev:
-	npm run dev
+	pnpm run dev
 
 build:
-	npm run build
+	pnpm run build
 
 cf-typegen:
-	npm run cf-typegen
+	pnpm run cf-typegen
 
 deploy:
 	npx opennextjs-cloudflare build
