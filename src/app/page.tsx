@@ -221,6 +221,24 @@ export default async function Page() {
                   <div className="space-y-6">
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h5 className="text-lg font-medium text-gray-800 mb-2">
+                        Cross-service Communication Platform
+                      </h5>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
+                      <p className="text-gray-600 mb-2">
+                        Event-driven Architecture, Amazon EventBridge, Outbox Pattern, CloudEvents
+                      </p>
+                      <p className="text-sm font-medium text-gray-600 mb-2">Description：</p>
+                      <p className="text-gray-600">
+                        Designed and built an event-driven communication platform connecting
+                        multiple services. Adopted Amazon EventBridge as the central event bus,
+                        applied the outbox pattern to guarantee reliable event delivery, and
+                        standardized event schemas with CloudEvents to enable loosely coupled,
+                        scalable inter-service integration.
+                      </p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h5 className="text-lg font-medium text-gray-800 mb-2">
                         Identity and Access Management Renewal
                       </h5>
                       <p className="text-sm font-medium text-gray-600 mb-2">Tech Stack：</p>
