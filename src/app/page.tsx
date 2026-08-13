@@ -121,25 +121,80 @@ export default async function Page() {
               <ul className="text-gray-600 space-y-2">
                 <li>Native Japanese</li>
                 <li>Business English</li>
-                <li>Elementary German (telc Deutsch B1)</li>
+                <li>
+                  Elementary German (
+                  <a
+                    href="https://results.telc.net/qr/TWG6dM4TSVCRV5uedgnM4ZfKCh-tR0fviay9NHOOPsf9w8tN-QJGHaF2yWk-8yra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline">
+                    telc Deutsch B1
+                  </a>
+                  )
+                </li>
               </ul>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 md:col-span-2">
               <h3 className="text-xl font-semibold text-gray-700 mb-4">Certifications</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-gray-700 font-medium">Google Cloud Certified:</p>
+                  <p className="text-gray-700 font-medium">AWS Certified:</p>
                   <ul className="list-disc list-inside ml-4 text-gray-600 mt-2">
-                    <li>Professional Cloud Architect</li>
-                    <li>Professional Cloud Developer</li>
-                    <li>Cloud DevOps Engineer</li>
+                    <li>
+                      <a
+                        href="https://cp.certmetrics.com/amazon/en/public/verify/credential/3BP8W0Y1RJQQQD31"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">
+                        Solutions Architect - Professional
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://cp.certmetrics.com/amazon/en/public/verify/credential/R5KLSWJCCJEEQ0W9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">
+                        DevOps Engineer - Professional
+                      </a>
+                    </li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-gray-700 font-medium">AWS Certified:</p>
+                  <p className="text-gray-700 font-medium">Google Cloud Certified:</p>
                   <ul className="list-disc list-inside ml-4 text-gray-600 mt-2">
-                    <li>DevOps Engineer - Professional</li>
-                    <li>Solutions Architect - Professional</li>
+                    <li>
+                      <a
+                        href="https://www.credly.com/badges/61ec0f29-1c59-498a-bef8-829080a0c355/public_url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">
+                        Professional Cloud Architect
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.credly.com/badges/09858e03-d5a1-409e-89c6-1cdc8874ffa0/public_url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">
+                        Professional Cloud Developer
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-gray-700 font-medium">Claude:</p>
+                  <ul className="list-disc list-inside ml-4 text-gray-600 mt-2">
+                    <li>
+                      <a
+                        href="https://www.credly.com/badges/5a404c6f-0428-4109-8bd8-cc3b37c7f52b/public_url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">
+                        Claude Certified Developer - Foundations
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>

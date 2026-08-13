@@ -1,4 +1,5 @@
 INSERT INTO Blog (title, content, published, externalLink) VALUES
+('Building inter-service integration using the Outbox pattern with Debezium + Amazon MSK', '', 1, 'https://dev.classmethod.jp/en/articles/outbox-pattern-in-aws-with-debezium-msk/'),
 ('How Spring MVC Implements Suspend Functions', '', 1, 'https://zenn.dev/seiichi1101/articles/kotlin-coroutine-in-spring-mvc?locale=en'),
 ('Understanding Kotlin Coroutines: A Personal Deep Dive', '', 1, 'https://zenn.dev/seiichi1101/articles/kotlin-coroutine?locale=en'),
 ('Spring Boot + Micrometer: Metrics to Send to CloudWatch Metrics and Configuration Method', '', 1, 'https://dev.classmethod.jp/en/articles/20260327-micrometer-cwl/'),
