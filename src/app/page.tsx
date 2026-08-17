@@ -561,6 +561,12 @@ export default async function Page() {
           </div>
         </section>
 
+        {/* Blogs */}
+        <section>
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Recent Blogs</h2>
+          <LoadMoreBlogs url={urlForClient} initialBlogs={blogs} />
+        </section>
+
         {/* Showcase */}
         <section>
           <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Showcase</h2>
@@ -578,12 +584,6 @@ export default async function Page() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Blogs */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b-2 pb-2">Recent Blogs</h2>
-          <LoadMoreBlogs url={urlForClient} initialBlogs={blogs} />
         </section>
 
         {/* Honors & Awards */}
